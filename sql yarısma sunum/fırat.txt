@@ -1,0 +1,29 @@
+--id sini verdiðim müþteri bana kaç para kazandýrmýþ
+create proc üyekazanci
+@id int
+as
+
+select UyeId,UyeAdi+''+UyeSoyadi Adý_Soyadý,sum(ay*AylikUcret) toplamücret  from
+(select u.UyeId,u.UyeAdi,u.UyeSoyadi,ut.AylikUcret,
+ DATEDIFF(month,u.UyelikTarihi,getdate()) ay from Uye u join UyelikTipi ut on u.UyelikTipiId=ut.UyelikTipiId ) 
+ tablo where @id=UyeId group by UyeAdi,UyeSoyadi,UyeId
+
+ exec üyekazanci 1
+ 
+ --en fazla tercih edilen 3 oyuncu
+alter proc populeroyuncular
+ as
+ select  top 3 o.OyuncuAdi,o.OyuncuSoyadi,count(s.FilmId) filmsayýsý  from DepoHareket dp join Stok s on dp.StokId=s.StokId 
+ join Film f on f.FilmId=s.FilmId join FilmYonetmen fy on f.FilmId=fy.FilmId 
+ join Oyuncu o on fy.OyuncuId=o.OyuncuId group by o.OyuncuAdi,o.OyuncuSoyadi
+ 
+ exec populeroyuncular
+
+ --kiraya en çok giden film ve toplam kiraya  gidiþ sayýsý
+ create proc ençokkirayagiden
+ as
+ select top 1 f.FilmAdi,count(dp.HareketCesidiId)Kiraya_gidiþ_sayýsý
+  from DepoHareket dp join Stok s on dp.StokId=s.StokId join Film f on f.FilmId=s.FilmId where HareketCesidiId=3 
+ group by  f.FilmAdi
+
+ exec ençokkirayagiden

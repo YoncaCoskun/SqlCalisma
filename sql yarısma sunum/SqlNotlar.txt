@@ -1,0 +1,54 @@
+
+Veri tabaný nedir?
+MS Sql Server, microsoft tarafýndan geliþtirilen bir iliþkisel veri tabaný yönetim sistemidir.
+
+SQL : 
+Structured Query Language
+Yapýlandýrýlmýþ Sorgulama Dili
+
+
+Veri (Data) Nedir?
+Bilgisayarýn alabildiði, iþleyebildiði, sonuç üretebildiði ve saklayabildiði herþey data (veri) olarak bilinir.
+
+En çok kullanýlan veri tabanlarý
+
+Sybase,MySql, MsSql, PostgreSQL, Oracle, Firebird
+
+Hangisinin daha iyi olduðu, yazýlým yapýlan ortama, ihtiyaç duyulan veri boyutuna kýsacasý yapýlan projeye göre deðiþir.
+
+Transac SQL : MS SQL veri tabanýnýn programalama dilinin adýdýr. TSQL diye kýsaltýlýr.
+
+TSQL öðrendindikten sonra bunu bir çok veri tabaný için kullanabiliriz.
+
+
+VERÝ TABANI MODELLERÝ
+Ýliþkisel Model : Verilerin tablolarda tutan veri tabaný modelidir.
+
+Dosya Sistemli Model : 
+Verileri dosya gibi disk üzerine yazan veri tabaný modelidir.
+
+Hiyerarþik Modeli : Klasör ve dosya gibi verilerin saklanmasý gibi hiyerarþik yapýlarýn tutuluðu veri tabaný modelidir.
+
+
+Nesne Veritabaný modeli
+programlama sirasýnda herhangi bir nesnenin disk üzerine yazýdýrlarak veri saklama saðlayan bir veri tabaný modelidir.
+
+Veri tabaný yönetim sistemi
+RDBMS - Sql Server Managament Studio
+Yönetim sistemleri veri tabaný için dosyalar tablolar yapmamýzý saðlayan bir yazýlýmdýr.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
